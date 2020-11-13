@@ -48,7 +48,7 @@ import saga from './saga'
           onClick={()=>{setInputValue("")}}
           >Reset</button>
       </div>
-      {data!==null? <ShowResult data={data}/> : "" }
+      {data? <ShowResult data={data}/> : "" }
       <GlobalStyle />
     </div>
   );

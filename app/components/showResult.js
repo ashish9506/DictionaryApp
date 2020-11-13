@@ -1,6 +1,8 @@
 import React from 'react'
+
 export const ShowResult = (props) => {
-  
+ 
+    
     return (
         <div className="container mt-5">
             <div>
@@ -22,11 +24,9 @@ export const ShowResult = (props) => {
             </div>
             <div className="mt-5">
                 <h3 className="headingDictionary">How to Spell</h3>
-                {console.log(props.data.results[0].lexicalEntries[0].entries[0].pronunciations[1].audioFile)}
-                <audio controls className="audioSpell">
-                    <source src={props.data.results[0].lexicalEntries[0].entries[0].pronunciations[1].audioFile} />
-  
+                <audio src={props.data.results[0].lexicalEntries[0].entries[0].pronunciations[1].audioFile}  className="audioSpell" controls>
                 </audio>
+     
             </div>
         </div>
     )
