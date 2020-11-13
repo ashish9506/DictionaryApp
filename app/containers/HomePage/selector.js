@@ -7,6 +7,8 @@ const dictionarySelector=()=> createSelector(
     stateSelector,
     substate=>substate
 );
-
 export default dictionarySelector
 export {dictionarySelector}
+
+
+

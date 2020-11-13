@@ -1,6 +1,6 @@
 import React from 'react'
-
 export const ShowResult = (props) => {
+  
     return (
         <div className="container mt-5">
             <div>
@@ -17,7 +17,8 @@ export const ShowResult = (props) => {
             </div>
             <div className="mt-5">
                 <h3 className="headingDictionary">Phrases</h3>
-                {props.data.results[0].lexicalEntries[0].phrases.map((phrase,i)=><span key={i} className="d-block">{`${i+1}. `}{phrase.text}</span>)}
+                {'phrases' in props.data.results[0].lexicalEntries[0] ? props.data.results[0].lexicalEntries[0].phrases.map((phrase,i)=><span key={i} className="d-block">{`${i+1}. `}{phrase.text}</span>) : "Phrases not found" }
+          
             </div>
             <div className="mt-5">
                 <h3 className="headingDictionary">How to Spell</h3>

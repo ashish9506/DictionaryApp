@@ -17,6 +17,13 @@ import saga from './saga'
   useInjectSaga({ key: 'dictionaryData', saga });
   const [inputValue, setInputValue] = useState("")
   const {data,loading}=props.details
+  const  enterKeyPressed =(e)=>{
+    let code = e.keyCode || e.which;
+    if(code===13)
+    {
+      props.dispatch(fetchInfo(inputValue))
+    }
+  }
   return (
     <div className="container">
       <h1 className="text-center">Word Dictionary</h1>
@@ -26,7 +33,7 @@ import saga from './saga'
           className="shadow inputBox"
           value={inputValue}
           onChange={(e)=>{setInputValue(e.target.value)}}
-
+          onKeyPress={enterKeyPressed}
           />
       </div>
 
@@ -35,7 +42,6 @@ import saga from './saga'
           className="btn shadow btn-lg btn-warning"
           onClick={()=>{props.dispatch(fetchInfo(inputValue))}}
           disabled={loading}
-      
           >Search</button>
           <button 
           className="btn shadow btn-lg btn-warning ml-4"
